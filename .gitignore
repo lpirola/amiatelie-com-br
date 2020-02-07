@@ -7,6 +7,7 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/themes/*
 !web/app/themes/.gitkeep
+web/app/languages/
 
 # WordPress
 web/wp
@@ -18,6 +19,7 @@ web/.htaccess
 # Composer
 /vendor
 !vendor/.gitkeep
+*.phar
 
 # Eclipse project files
 .classpath
@@ -33,3 +35,7 @@ web/.htaccess
 # WP Plugins
 web/app/object-cache.php
 web/app/advanced-cache.php
+
+# WP Themes
+
+!web/app/themes/amiatelie

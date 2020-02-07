@@ -1,81 +1,185 @@
 {
-  "name": "philippheuer/wordpress-heroku",
-  "type": "project",
-  "license": "MIT",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "homepage": "https://github.com/PhilippHeuer/wordpress-heroku",
-  "keywords": [
-	"bedrock", "wordpress", "stack", "composer", "heroku", "wp"
-  ],
-  "config": {
-	"preferred-install": "dist",
-	"platform":{
-	  "php": "7.0",
-	  "ext-gettext": "1.0"
-	}
-  },
-  "repositories": [
-	{
-	  "type": "composer",
-	  "url": "https://wpackagist.org"
-	}
-  ],
-  "minimum-stability": "stable",
-  "require": {
-	"php": ">=7.0",
-	"ext-gettext": "*",
-	"composer/installers": "1.5.0",
-	"vlucas/phpdotenv": "2.4.0",
-	"wp-cli/wp-cli" : "1.4.1",
-	"oscarotero/env": "^1.1.0",
-	"koodimonni/composer-dropin-installer": "1.1.0",
-	"johnpbloch/wordpress": "4.9.2",
-	"roots/wp-password-bcrypt": "1.0.0",
-	"wpackagist-plugin/wordfence": "6.3.22",
-	"wpackagist-plugin/all-in-one-seo-pack": "2.4.4",
-	"wpackagist-plugin/nginx-helper": "1.9.10",
-	"wpackagist-plugin/sendgrid-email-delivery-simplified": "1.11.7",
-	"frc/batcache": "1.3-a2",
-	"wpackagist-plugin/redis-cache": "1.3.5",
-	"predis/predis": "1.1.1",
-	"humanmade/s3-uploads": "2.0.0-beta3",
-	"wpackagist-plugin/debug-bar": "0.9"
-  },
-  "require-dev": {
-	"heroku/heroku-buildpack-php": "*",
-	"squizlabs/php_codesniffer": "3.2.2"
-  },
-  "extra": {
-	"installer-paths": {
-	  "vendor/dumpster/": [
-		"wpackagist-plugin/redis-cache",
-		"frc/batcache"
-	  ],
-	  "web/app/mu-plugins/{$name}/": [
-		"wpackagist-plugin/wordfence",
-		"wpackagist-plugin/nginx-helper",
-		"wpackagist-plugin/sendgrid-email-delivery-simplified",
-		"humanmade/s3-uploads"
-	  ],
-	  "web/app/plugins/{$name}/": [
-		"wpackagist-plugin/all-in-one-seo-pack",
-		"wpackagist-plugin/debug-bar"
-	  ],
-	  "web/app/themes/{$name}/": [
-		"type:wordpress-theme"
-	  ]
+	"name": "philippheuer/wordpress-heroku",
+	"type": "project",
+	"license": "MIT",
+	"description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+	"homepage": "https://github.com/PhilippHeuer/wordpress-heroku",
+	"keywords": [
+		"bedrock",
+		"wordpress",
+		"stack",
+		"composer",
+		"heroku",
+		"wp"
+	],
+	"config": {
+		"preferred-install": "dist",
+		"platform": {
+			"php": "7.0",
+			"ext-gettext": "1.0"
+		}
 	},
-	"dropin-paths": {
-	  "web/app": [
-		"package:wpackagist-plugin/redis-cache:includes/object-cache.php",
-		"package:frc/batcache:advanced-cache.php"
-	  ]
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "composer",
+			"url": "https://wp-languages.github.io"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=7.0",
+		"ext-gettext": "*",
+		"ext-soap": "*",
+    "ext-mbstring": "*",
+    "ext-gd": "*",
+		"composer/installers": "1.5.0",
+		"vlucas/phpdotenv": "2.4.0",
+		"wp-cli/wp-cli": "1.4.1",
+		"oscarotero/env": "^1.1.0",
+		"koodimonni/composer-dropin-installer": "1.1.0",
+		"johnpbloch/wordpress": "4.9.2",
+		"roots/wp-password-bcrypt": "1.0.0",
+		"wpackagist-plugin/wordfence": "6.3.22",
+		"wpackagist-plugin/nginx-helper": "1.9.10",
+		"wpackagist-plugin/sendgrid-email-delivery-simplified": "1.11.7",
+		"frc/batcache": "1.3-a2",
+		"wpackagist-plugin/redis-cache": "1.3.5",
+		"predis/predis": "1.1.1",
+		"humanmade/s3-uploads": "2.0.0-beta3",
+		"wpackagist-plugin/debug-bar": "0.9",
+		"koodimonni-language/pt_br": "^4",
+		"wpackagist-theme/twentyseventeen": "^1",
+		"koodimonni-plugin-language/woocommerce-pt_br": "^3",
+		"wpackagist-plugin/contact-form-7": "^4.7",
+		"wpackagist-plugin/elementor": "^1.5",
+		"wpackagist-plugin/shortcodes-ultimate": "dev-trunk",
+		"wpackagist-plugin/instagram-slider-widget": "1.4.0",
+		"wpackagist-plugin/easy-facebook-likebox": "4.3.0",
+		"wpackagist-plugin/all-in-one-schemaorg-rich-snippets": "^1.5",
+		"wpackagist-plugin/backwpup": "^3.4",
+		"wpackagist-plugin/better-wp-security": "^6.2",
+		"wpackagist-plugin/w3-total-cache": "^0.9",
+		"wpackagist-plugin/maintenance-page": "dev-trunk",
+		"wpackagist-plugin/wordpress-seo": "^12",
+		"wpackagist-plugin/social-media-icons-widget": "16.07",
+		"wpackagist-plugin/wp-better-emails": "0.3",
+		"wpackagist-plugin/jetpack": "~5",
+		"wpackagist-plugin/smart-slider-3": "^3",
+		"wpackagist-plugin/megamenu": "^2",
+		"wpackagist-plugin/wp-pagenavi": "2.92",
+		"wpackagist-plugin/wordpress-https": "3.3.6",
+		"wpackagist-plugin/woocommerce-correios": "^3",
+		"wpackagist-plugin/woocommerce-extra-checkout-fields-for-brazil": "^3",
+		"wpackagist-plugin/woocommerce-google-analytics-integration": "^1",
+		"wpackagist-plugin/woocommerce": "^3",
+		"wpackagist-plugin/woocommerce-jetpack": "^2.8",
+		"wpackagist-plugin/woocommerce-pagarme": "2.0.10",
+		"wpackagist-plugin/woocommerce-image-zoom": "^1.01",
+		"wpackagist-plugin/woocommerce-dynamic-gallery": "^2",
+		"wpackagist-plugin/woocommerce-colors": "1.0.6",
+		"wpackagist-plugin/wordpress-importer": "0.6.3",
+		"wpackagist-plugin/woo-custom-emails": "^2",
+		"wpackagist-plugin/decorator-woocommerce-email-customizer": "^1.0.1",
+		"wpackagist-plugin/yith-woocommerce-social-login": "^1",
+		"wpackagist-plugin/categories-images": "2.5.3",
+		"wpackagist-plugin/google-analytics-dashboard-for-wp": "^5",
+		"wpackagist-plugin/wysija-newsletters": "^2.7.8",
+		"wpackagist-plugin/wp-mail-smtp": "0.10.1",
+		"wpackagist-plugin/custom-facebook-feed": "2.4.6",
+		"wpackagist-plugin/woo-floating-cart-lite": "^1.0.6.6",
+		"wpackagist-plugin/continue-shopping-for-woocommerce": "^1.2",
+		"wpackagist-plugin/yith-woocommerce-badges-management": "^1.3.4",
+		"wpackagist-plugin/bootstrap-one-page-woocommerce-checkout": "^1.1.1",
+		"wpackagist-plugin/pixelyoursite": "5.0.5.2"
 	},
-	"wordpress-install-dir": "web/wp"
-  },
-  "scripts": {
-	"test": [
-	  "vendor/bin/phpcs"
-	]
-  }
+	"require-dev": {
+		"heroku/heroku-buildpack-php": "*",
+		"squizlabs/php_codesniffer": "3.2.2"
+	},
+	"extra": {
+		"installer-paths": {
+			"vendor/dumpster/": [
+				"wpackagist-plugin/redis-cache",
+				"frc/batcache"
+			],
+			"web/app/mu-plugins/{$name}/": [
+				"wpackagist-plugin/wordfence",
+				"wpackagist-plugin/nginx-helper",
+				"wpackagist-plugin/sendgrid-email-delivery-simplified",
+				"humanmade/s3-uploads"
+			],
+			"web/app/plugins/{$name}/": [
+				"wpackagist-plugin/debug-bar",
+				"wpackagist-plugin/contact-form-7",
+				"wpackagist-plugin/elementor",
+				"wpackagist-plugin/shortcodes-ultimate",
+				"wpackagist-plugin/instagram-slider-widget",
+				"wpackagist-plugin/easy-facebook-likebox",
+				"wpackagist-plugin/all-in-one-schemaorg-rich-snippets",
+				"wpackagist-plugin/backwpup",
+				"wpackagist-plugin/better-wp-security",
+				"wpackagist-plugin/w3-total-cache",
+				"wpackagist-plugin/maintenance-page",
+				"wpackagist-plugin/wordpress-seo",
+				"wpackagist-plugin/social-media-icons-widget",
+				"wpackagist-plugin/wp-better-emails",
+				"wpackagist-plugin/jetpack",
+				"wpackagist-plugin/smart-slider-3",
+				"wpackagist-plugin/megamenu",
+				"wpackagist-plugin/wp-pagenavi",
+				"wpackagist-plugin/wordpress-https",
+				"wpackagist-plugin/woocommerce-correios",
+				"wpackagist-plugin/woocommerce-extra-checkout-fields-for-brazil",
+				"wpackagist-plugin/woocommerce-google-analytics-integration",
+				"wpackagist-plugin/woocommerce",
+				"wpackagist-plugin/woocommerce-jetpack",
+				"wpackagist-plugin/woocommerce-pagarme",
+				"wpackagist-plugin/woocommerce-image-zoom",
+				"wpackagist-plugin/woocommerce-dynamic-gallery",
+				"wpackagist-plugin/woocommerce-colors",
+				"wpackagist-plugin/wordpress-importer",
+				"wpackagist-plugin/woo-custom-emails",
+				"wpackagist-plugin/decorator-woocommerce-email-customizer",
+				"wpackagist-plugin/yith-woocommerce-social-login",
+				"wpackagist-plugin/categories-images",
+				"wpackagist-plugin/google-analytics-dashboard-for-wp",
+				"wpackagist-plugin/wysija-newsletters",
+				"wpackagist-plugin/wp-mail-smtp",
+				"wpackagist-plugin/custom-facebook-feed",
+				"wpackagist-plugin/woo-floating-cart-lite",
+				"wpackagist-plugin/continue-shopping-for-woocommerce",
+				"wpackagist-plugin/yith-woocommerce-badges-management",
+				"wpackagist-plugin/bootstrap-one-page-woocommerce-checkout",
+				"wpackagist-plugin/pixelyoursite"
+			],
+			"web/app/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		},
+		"dropin-paths": {
+			"web/app": [
+				"package:wpackagist-plugin/redis-cache:includes/object-cache.php",
+				"package:frc/batcache:advanced-cache.php"
+			],
+			"web/app/languages/": [
+				"vendor:koodimonni-language"
+			],
+			"web/app/languages/plugins/": [
+				"vendor:koodimonni-plugin-language"
+			],
+			"web/app/languages/themes/": [
+				"vendor:koodimonni-theme-language"
+			]
+		},
+		"wordpress-install-dir": "web/wp"
+	},
+	"scripts": {
+		"test": [
+			"vendor/bin/phpcs"
+		]
+	}
 }
