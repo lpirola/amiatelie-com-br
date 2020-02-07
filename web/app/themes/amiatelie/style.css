@@ -1,0 +1,144 @@
+/*
+ Theme Name:   Amiatelie
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Customização para e-commerce
+ Author:       Lucas Pirola
+ Author URI:   http://pirola.me
+ Template:     twentyseventeen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twentyseventeen
+*/
+
+#top-menu {
+  text-align: center;
+}
+
+.custom-header {
+  background-color: white;
+}
+
+.main-navigation a {
+  padding: .5em 1.25em;
+}
+
+.site-branding {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.woocommerce-checkout .entry-header {
+  display: none;
+}
+
+.panel-content .wrap {
+    padding: 1em 0;
+}
+
+.site-footer {
+  background-color: #222;
+  color: white;
+}
+
+
+.site-footer .widget-column.footer-widget-1,
+.site-footer .widget-column.footer-widget-2,
+.site-footer .widget-column.footer-widget-3 {
+  float: left;
+  width: 100%;
+}
+
+.site-footer .widget-column input[type=submit] {
+  background: #767676;
+}
+
+.site-footer .widget-column a,
+.site-footer .widget-column a:hover,
+.site-footer .widget-column .widget-title {
+  color: white;
+}
+
+.site-footer .widget-column ul li {
+  border: none;
+}
+
+.social-icons-widget ul.show-labels li {
+  display: inline-block;
+}
+.social-icons-widget ul.show-labels li a img {
+  box-shadow: none;
+  margin-right: 0;
+}
+.social-icons-widget ul li a span {
+  display: none;
+}
+
+.site-footer .widget-area a:focus,
+.site-footer .widget-area a:hover, .widget ul li a:focus, .widget ul li a:hover {
+  box-shadow: inset 0 0 0 rgba(255,255,255, 0), 0 3px 0 rgba(255,255,255, 1);
+}
+
+@media screen and (min-width: 30em) {
+  .site-footer .widget-column.footer-widget-1,
+  .site-footer .widget-column.footer-widget-2,
+  .site-footer .widget-column.footer-widget-3 {
+    width: 33%;
+    padding: 0 1em 0 0;
+  }
+}
+
+.woocommerce-result-count,
+.woocommerce-ordering,
+.woocommerce-page .page-title,
+.product_gallery .a3dg-navbar-control {
+  display: none;
+}
+
+.site-content {
+  padding: 1.5em 0 0 0;
+}
+
+.woocommerce-breadcrumb {
+  margin-bottom: 0;
+  border: 0;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  width: 31%;
+  margin: 0 1.15% 2.992em 1.15%;
+}
+
+h3 {
+  padding: 0.75em 0 0 0;
+}
+
+.button {
+  background-color: black;
+  padding: .5em 1em;
+  color: white;
+}
+
+.button:hover {
+  color: white;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    width: 100%;
+  }
+  .woocommerce-result-count,
+  .woocommerce-ordering,
+  .woocommerce-page .page-title,
+  .product_gallery .a3dg-navbar-control {
+    display: none;
+  }
+}
+
+.custom-logo-link img {
+	max-height: 150px;
+}
